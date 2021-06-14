@@ -1,28 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <EditText
-        android:id="@+id/note_text"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Write Your Notes here"
-        android:textSize="35dp"/>
-    <Button
-        android:id="@+id/save_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/note_text"
-        android:text="SAVE"
-        android:textAlignment="center"
-        android:onClick="saveData"/>
-    <Button
-        android:id="@+id/cal_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/save_btn"
-        android:text="Go Back to Calculate"
-        android:textAlignment="center"
-        android:onClick="go_back_toCal"/>
+        android:layout_height="match_parent"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5  Mangoes for Rs 10 each.\n10 Bananas for Rs 5 each.\n20 Watermelons for Rs 50 each.\nCalculate the Total Price."
+            android:textSize="30dp"/>
+        <EditText
+            android:id="@+id/note_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="1"
+            android:lines="10"
+            android:hint="Write Your Notes here"
+            android:textSize="20dp"
+            android:layout_below="@+id/questionText"/>
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/note_text"
+            android:text="SAVE"
+            android:textAlignment="center"
+            android:onClick="saveData"/>
+        <Button
+            android:id="@+id/cal_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/save_btn"
+            android:text="Go Back to Calculate"
+            android:textAlignment="center"
+            android:onClick="go_back_toCal"/>
+        <Button
+            android:id="@+id/bill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Bill"
+            android:textSize="15dp"
+            android:layout_below="@id/cal_btn"
+            android:onClick="showBill"
+            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/billText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:layout_below="@id/bill"
+            android:textSize="25dp"
+            android:padding="5dp"/>
 
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

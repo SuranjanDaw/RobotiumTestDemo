@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class NotesTaking extends AppCompatActivity {
@@ -31,5 +32,11 @@ public class NotesTaking extends AppCompatActivity {
         Intent intent = new Intent(NotesTaking.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+    }
+
+    public void showBill(View view) {
+        TextView bill = (TextView) findViewById(R.id.billText);
+        EditText ee = findViewById(R.id.note_text);
+        bill.setText(ee.getText());
     }
 }
